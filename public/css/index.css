@@ -148,6 +148,7 @@ header {
   position: relative;
   color: white; 
   overflow: hidden;
+  margin-top: 4rem;
 }
 .bienvenida_contenido {
   display: flex;
@@ -174,13 +175,15 @@ header {
 .difuminado_circular {
   width: 54rem;
   height: 54rem;
-  background: radial-gradient(circle, #32FA02 0%, #000 50%);
+  background: radial-gradient(circle, #32FA02 -100%, #000 50%);
   margin: -8rem 0 -8rem 0;
 }
-.difuminado_circular img{
-  width: 15rem;
-  margin: 15rem 0 0 10rem;
+.difuminado_circular img {
+  width: 22rem;
+  margin: 16rem 0 0 10rem;
+
 }
+
 /*Decoracio*/
 .raya_horizontal_1 {
   top: 33%; 
