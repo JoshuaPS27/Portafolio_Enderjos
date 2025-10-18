@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por tu mensaje!</title>
+    <style>
+        /* Fondo negro y animación de partículas verdes */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            overflow: hidden;
+            color: #32FA02;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #32FA02;
+            color: #000;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        a:hover {
+            background-color: #14ac56;
+        }
+
+        /* Animación de partículas */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #32FA02;
+            opacity: 0.7;
+            animation: move 6s linear infinite;
+        }
+
+        @keyframes move {
+            0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-200px) translateX(100px) scale(1.5); opacity: 0.3; }
+            100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.7; }
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Gracias!</h1>
+    <p>Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.</p>
+    <a href="index.html">Volver al inicio</a>
+
+    <!-- Generación de partículas -->
+    <script>
+        const NUM_PARTICLES = 30;
+
+        for (let i = 0; i < NUM_PARTICLES; i++) {
+            let particle = document.createElement('div');
+            particle.classList.add('particle');
+            let size = Math.random() * 10 + 5; // tamaño aleatorio
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * window.innerWidth}px`;
+            particle.style.top = `${Math.random() * window.innerHeight}px`;
+            particle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            document.body.appendChild(particle);
+        }
+    </script>
+</body>
+</html>
