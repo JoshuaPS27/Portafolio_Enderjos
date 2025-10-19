@@ -39,9 +39,35 @@ p, .subtitulo {
 .raya {
     width: 10rem;
     background-color: #32FA02;
-    height: 2px;
+    height: 4px;
     position: absolute;
+    overflow: hidden;
+    background-color: #111;
     z-index: 2;
+}
+.raya::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, #32FA02, transparent);
+  animation: brilloRaya 3s linear infinite;
+}
+.raya_vertical::before {
+  left: 0;
+  width: 10rem;
+  background: linear-gradient(to bottom, transparent, #32FA02, transparent);
+  animation: brilloVertical 3s linear infinite;
+}
+@keyframes brilloVertical {
+  0% { top: -100%; }
+  100% { top: 100%; }
+}
+@keyframes brilloRaya {
+  0% { left: -50%; }
+  100% { left: 100%; }
 }
 /*-------------------------------Inicio Header---------------------------------*/
 header {
@@ -192,7 +218,7 @@ header {
 .raya_vertical_1 {
   top: 26%;
   left: -1rem; 
-  width: 2px;
+  width: 3px;
   height: 11.5rem; 
 }
 .raya_horizontal_2 {
@@ -203,7 +229,7 @@ header {
 .raya_vertical_2 {
   top: 55%;
   left: 40.5rem; 
-  width: 2px;
+  width: 3px;
   height: 15rem; 
 }
 /*-------------------------------Fin de bienvenidos---------------------------------*/
@@ -341,7 +367,7 @@ h2 {
 .raya_vertical_3 {
     top: 6rem;
     left: 38rem; 
-    width: 2px;
+    width: 3px;
     height: 16rem; 
 }
 .raya_horizontal_4 {
@@ -350,10 +376,10 @@ h2 {
   width: 31rem;
 }
 .raya_vertical_4 {
-    top: 22rem;
-    left: 7rem; 
-    width: 2px;
-    height: 35rem; 
+  top: 22rem;
+  left: 7rem; 
+  width: 3px;
+  height: 35rem; 
 }
 /*-------------------------------Fin de BLOG---------------------------------*/
 /*-------------------------------Inicio abilidades---------------------------------*/
