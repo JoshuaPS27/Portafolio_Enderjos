@@ -65,38 +65,33 @@
             </section>
 
             <!------------------------Seccion de los Diseños mas recientes------------------------------------>
-            <section id="nav_disenos" data-aos="fade-up">
+            <section id="nav_disenos">
                 <h2>Diseños <span style="color: #32FA02;">Recientes</span></h2>
-
-                <div class="card" data-aos="fade-up">
-                    <div data-aos="fade-up"><!--Card 1-->
-                        <img src="media/paginas/kairos.png" alt="Imagen de la pagina de Kairos"><!--Imagende la pagina-->
-                        <h3>Kairos</h3><!--Titulo-->
-                        <p>Pagina de Estetica Y Spa</p><!--Descripcion-->
-                        <div class="visitar">
-                            <button><a href="https://fascinating-churros-06c54d.netlify.app/">Visitar</a></button><!--Boton con difuminado-->
+                <div class="carousel-wrapper"  data-aos="fade-up">
+                    <button class="arrow left">&#10094;</button>
+                    <div class="carousel" id="carousel">
+                        <div class="card">
+                            <img src="media/paginas/kairos.png" alt="Kairos" />
+                            <h3>Kairos</h3>
+                            <p>Estética y Spa</p>
+                            <a href="https://fascinating-churros-06c54d.netlify.app/" class="visitar">Visitar</a>
+                        </div>
+                        <div class="card">
+                            <img src="media/paginas/bienesraices.png" alt="Bienes Raices" />
+                            <h3>Bienes Raices</h3>
+                            <p>Venta o Alquiler</p>
+                            <a href="https://graceful-kataifi-1fd22e.netlify.app/" class="visitar">Visitar</a>
+                        </div>
+                        <div class="card">
+                            <img src="media/paginas/gestion_cultural.png" alt="Gestion Cultural" />
+                            <h3>Gestión Cultural</h3>
+                            <p>Alajuelita</p>
+                            <a href="https://gestioncultural-alajuelita.netlify.app/" class="visitar">Visitar</a>
                         </div>
                     </div>
-
-                    <div data-aos="fade-up"><!--Card 2-->
-                        <img src="media/paginas/bienesraices.png" alt="Imagen de la pagina de Kairos"><!--Imagende la pagina-->
-                        <h3>Bienes Raices</h3><!--Titulo-->
-                        <p>Pagina de Venta o Alquiler de departamentos</p><!--Descripcion-->
-                        <div class="visitar">
-                            <button><a href="https://graceful-kataifi-1fd22e.netlify.app/">Visitar</a></button><!--Boton con difuminado-->
-                        </div>
-                    </div>
-
-                    <div data-aos="fade-up"><!--Card 3-->
-                        <img src="media/paginas/gestion_cultural.png" alt="Imagen de la pagina de Kairos"><!--Imagende la pagina-->
-                        <h3>Gestion Cultural</h3><!--Titulo-->
-                        <p>Pagina Gestion Cultural de alajuelita</p><!--Descripcion-->
-                        <div class="visitar">
-                            <button><a href="https://gestioncultural-alajuelita.netlify.app/">Visitar</a></button><!--Boton con difuminado-->
-                        </div>
-                    </div>
+                    <button class="arrow right">&#10095;</button>
                 </div>
-                <button class="ver"><a href="proyectos.html">Ver mas</a></button><!--Este es un link que llevara un la pagina con todas los sitios creados-->
+                <a href="proyectos.html" class="ver">Ver más</a>
             </section>
 
             <!------------------------Seccion de porque yo?------------------------------------>
@@ -407,6 +402,51 @@
         mirror: true         // al subir, animación inversa
     });
     </script>
+    <script>
+  const carousel = document.getElementById('carousel');
+  const cards = carousel.querySelectorAll('.card');
+  let angle = 0;
+  const step = 360 / cards.length;
+  let autoRotate;
+
+  function positionCards() {
+    cards.forEach((card, i) => {
+      const rotation = i * step;
+      card.style.transform = `rotateY(${rotation}deg) translateZ(400px)`;
+    });
+  }
+
+  function rotateCarousel(direction = 1) {
+    angle += direction * step;
+    carousel.style.transform = `rotateY(${angle}deg)`;
+  }
+
+  function startAutoRotate() {
+    autoRotate = setInterval(() => rotateCarousel(1), 3000); // cada 3 segundos
+  }
+
+  function stopAutoRotate() {
+    clearInterval(autoRotate);
+  }
+
+  // Eventos para flechas
+  document.querySelector('.arrow.left').addEventListener('click', () => {
+    stopAutoRotate();
+    rotateCarousel(-1);
+  });
+
+  document.querySelector('.arrow.right').addEventListener('click', () => {
+    stopAutoRotate();
+    rotateCarousel(1);
+  });
+
+  // Eventos para detener al pasar el cursor
+  document.querySelector('.carousel-wrapper').addEventListener('mouseenter', stopAutoRotate);
+  document.querySelector('.carousel-wrapper').addEventListener('mouseleave', startAutoRotate);
+
+  positionCards();
+  startAutoRotate();
+</script>
 
 </body>
 
