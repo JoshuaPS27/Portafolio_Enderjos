@@ -281,6 +281,17 @@ footer {
 .navegacion_footer ul li a{
   text-decoration: none;
 }
+.pagina_realizadas{
+  display: flex;
+  flex-direction: column;
+}
+.pagina_realizadas a {
+  text-decoration: none;
+  margin-bottom: 0.3rem;
+}
+.pagina_realizadas a:hover {
+  color: #24b400;
+}
 .copy{
   margin: 2rem 0 0 0; 
   height: 2rem;

@@ -31,7 +31,7 @@
   margin-top: -1rem;
 }
 .difuminado_circular {
-  width: 54rem;
+  width: 54%;
   height: 54rem;
   background: radial-gradient(circle, #32FA02 -100%, #000 50%);
   margin: -8rem 0 -8rem 0;
@@ -214,11 +214,11 @@ h2 {
 }
 /*-------------------------------Fin de BLOG---------------------------------*/
 /*-------------------------------Inicio abilidades---------------------------------*/
-.abilidades h3 {
+.habilidades h3 {
   font-size: 1.8rem;
 }
 /* Fondo general */
-.abilidades {
+.habilidades {
   width: 80rem;            
   max-width: 100%;     
   margin: 0 auto;            
@@ -227,7 +227,7 @@ h2 {
   color: #fff;                
 }
 /* Grid de habilidades */
-.grid-abilidades {
+.grid-habilidades {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 125px;
@@ -236,7 +236,7 @@ h2 {
   width: 75rem;
 }
 /* Cada habilidad */
-.abilidad {
+.habilidad {
   background: linear-gradient(to bottom right, #323232, #131313);
   border-radius: 12px;
   padding: 20px;
@@ -244,11 +244,11 @@ h2 {
   box-shadow: 0 0 10px rgba(71, 71, 71, 0.7);
   transition: transform 0.3s ease;
 }
-.abilidad:hover {
+.habilidad:hover {
   transform: translateY(-5px);
 }
 /* Ícono circular */
-.abilidades_circulo {
+.habilidades_circulo {
   width: 80px;
   height: 80px;
   margin: -10rem 0 5rem 0; 
@@ -258,24 +258,24 @@ h2 {
   align-items: center;
   justify-content: center;
 }
-.abilidades_circulo img {
+.habilidades_circulo img {
   width: 80px;
   height: 80px;
 }
 /* Título y descripción */
-.abilidad h4 {
+.habilidad h4 {
   font-size: 1.6rem;
   margin: -4rem 0 2rem 0;
   text-align: left;
 }
-.abilidad p {
+.habilidad p {
   font-size: 0.95rem;
   line-height: 1.5;
   text-align: left;
   margin-bottom: 2rem;
 }
 /* Línea decorativa */
-.raya_abilidades {
+.raya_habilidades {
   width: 0.5rem;
   height: 3px;
   background-color: #32FA02;
