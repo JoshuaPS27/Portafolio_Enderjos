@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mapa del Sitio | Efecto Gotas</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+
+.mapa_sitio {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.fondo_gotas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background: radial-gradient(circle at center, #001a0f 0%, #000 100%);
+}
+
+.gota {
+  position: absolute;
+  width: 4px;
+  height: 15px;
+  background: #00ff88;
+  border-radius: 50%;
+  animation: caer linear infinite;
+}
+
+.onda {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border: 2px solid #00ff88;
+  border-radius: 50%;
+  opacity: 0;
+  transform-origin: center;
+  animation: ondaExpandir linear infinite;
+}
+
+@keyframes caer {
+  0% { top: -20px; opacity: 0; transform: scaleY(1); }
+  70% { opacity: 1; transform: scaleY(1.2); }
+  100% { top: 100%; opacity: 0; transform: scaleY(0.8); }
+}
+
+@keyframes ondaExpandir {
+  0% { transform: scale(0); opacity: 0; }
+  80% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+.contenedor_mapa {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00ff88;
+  text-align: center;
+}
+
+.contenedor_mapa h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #00ff88;
+}
+
+.mapa_lista {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 15px;
+}
+.mapa_lista li a{
+    width: 13rem;
+}
+.mapa_lista li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #000000;
+  background: #00ff88;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  display: inline-block;
+}
+
+.mapa_lista li a:hover {
+  background: #00cc66;
+  transform: scale(1.05);
+}
+
+</style>
+</head>
+<body>
+<section class="mapa_sitio">
+  <div class="fondo_gotas"></div>
+  <div class="contenedor_mapa">
+    <h1>Mapa del Sitio</h1>
+    <ul class="mapa_lista">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#nav_disenos">Diseños Resientes</a></li>
+      <li><a href="index.html#nav_blog">Blog</a></li>
+      <li><a href="index.html#nav_testimonios">Testimonios</a></li>
+      <li><a href="index.html#nav_contacto">Contacto</a></li>
+      <li><a href="proyectos.html">Diseños</a></li>
+      <li><a href="gracias.html">Gracias</a></li>
+    </ul>
+  </div>
+</section>
+
+<script>
+const fondo = document.querySelector('.fondo_gotas');
+const cantidad = 25;
+
+for (let i = 0; i < cantidad; i++) {
+  const gota = document.createElement('div');
+  gota.classList.add('gota');
+  gota.style.left = `${Math.random() * 100}%`;
+  const duracion = Math.random() * 2 + 2; // 2s a 4s
+  gota.style.animationDuration = `${duracion}s`;
+  gota.style.width = `${Math.random() * 4 + 2}px`;
+  gota.style.height = `${Math.random() * 15 + 5}px`;
+  fondo.appendChild(gota);
+
+  const onda = document.createElement('div');
+  onda.classList.add('onda');
+  onda.style.left = gota.style.left;
+  onda.style.bottom = '0px';
+  onda.style.animationDuration = `${duracion}s`;
+  onda.style.width = `${Math.random() * 6 + 4}px`;
+  onda.style.height = `${onda.style.width}px`;
+  fondo.appendChild(onda);
+}
+</script>
+</body>
+</html>

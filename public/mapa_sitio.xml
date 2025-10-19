@@ -1,0 +1,31 @@
+<?xml version=1.0 encoding="UTF-8"?>
+
+<urlset xmlns="https://www.sitemap.org/schemas/sitemap/0.9">
+<url>
+<loc>https://portafolio-de-evidencias-enderjos.netlify.app/</loc>
+<lastmod>2025-10-17</lastmod>
+<chargefreq>monthly</chargefreq>
+<priority>1.0</priority>
+</url>
+
+<url>
+<loc>https://portafolio-de-evidencias-enderjos.netlify.app/proyectos</loc>
+<lastmod>2025-10-17</lastmod>
+<chargefreq>monthly</chargefreq>
+<priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://portafolio-de-evidencias-enderjos.netlify.app/gracias</loc>
+<lastmod>2025-10-17</lastmod>
+<chargefreq>monthly</chargefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>https://portafolio-de-evidencias-enderjos.netlify.app/mapa-sitio</loc>
+<lastmod>2025-10-17</lastmod>
+<chargefreq>monthly</chargefreq>
+<priority>0.7</priority>
+</url>
+</urlset>
