@@ -4,139 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyectos | Enderjos</title>
-
-  <!-- Fuente y AOS -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/header_footer.css">
+  <link rel="stylesheet" href="css/proyectos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jacques+Francois&family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    header {
-      text-align: center;
-      padding: 2rem 1rem;
-      border-bottom: 2px solid #32FA02;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
-    }
-
-    .contenedor-proyectos {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      padding: 4rem 6rem;
-      justify-items: center;
-    }
-
-    .card {
-      background: #111;
-      border-radius: 1rem;
-      box-shadow: 0 0 15px rgba(50, 250, 2, 0.3);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      width: 100%;
-      max-width: 350px;
-      text-align: center;
-      padding-bottom: 1.5rem;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 25px rgba(50, 250, 2, 0.6);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-bottom: 2px solid #32FA02;
-    }
-
-    .card h3 {
-      margin-top: 1rem;
-      font-size: 1.4rem;
-      color: #32FA02;
-    }
-
-    .card p {
-      margin: 0.5rem 1rem 1.5rem;
-      font-size: 0.95rem;
-      color: #ccc;
-    }
-
-    .card button {
-      background: #32FA02;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-
-    .card button:hover {
-      background: #28c902;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid #32FA02;
-      color: #aaa;
-    }
-
-    /* -------- RESPONSIVE -------- */
-    @media (max-width: 1024px) {
-      .contenedor-proyectos {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 3rem 3rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .contenedor-proyectos {
-        grid-template-columns: 1fr;
-        padding: 2rem 2rem;
-      }
-    }
-
-    /* Animación tipo rebote */
-    @keyframes bounceInUp {
-      0% { opacity: 0; transform: translateY(200px); }
-      60% { opacity: 1; transform: translateY(-15px); }
-      80% { transform: translateY(10px); }
-      100% { transform: translateY(0); }
-    }
-
-    .card.bounce-in[aos-animate] {
-      animation: bounceInUp 1.1s cubic-bezier(.28,.84,.42,1) both;
-    }
-  </style>
 </head>
 <body>
-    
-
-  <header data-aos="fade-down">
-    <h1>Mis <span style="color: #32FA02;">Proyectos</span></h1>
-    <p>Explora los sitios web y diseños que he desarrollado recientemente.</p>
-  </header>
-
+  <header>
+        <div class="contenedor_header" data-aos="fade-down">
+            <a href="index.html"><img src="media/logo/logo.png" alt="Logo de Enderjos"></a>
+            <div class="menu_toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu_ham">
+                <nav class="menu_nav" id="menuNav">
+                    <ul>
+                        <li><a href="index.html#nav_inicio" class="nav_link">
+                            <span class="material-symbols-outlined">home</span>
+                            <span class="nav_text">Inicio</span>
+                        </li></a>
+                        <li><a href="index.html#nav_disenos" class="nav_link">
+                            <span class="material-symbols-outlined">Draw</span>
+                            <span class="nav_text">Diseños</span>
+                        </li></a>
+                        <li><a href="index.html#nav_blog" class="nav_link">
+                            <span class="material-symbols-outlined">article_person</span>
+                            <span class="nav_text">Blog</span>
+                        </li></a>
+                        <li><a href="index.html#nav_testimonios" class="nav_link">
+                            <span class="material-symbols-outlined">person_heart</span>
+                            <span class="nav_text">Testimonios</span>
+                        </li></a>
+                    </ul>
+                </nav>
+                <a href="index.html#nav_contacto" class="btn_contactar">Contactar</a>
+        </div>
+    </header>
   <main>
+    <div id="inicio_proyecto" class="inicio" data-aos="fade-down">
+      <h1>Mis <span style="color: #32FA02;">Proyectos</span></h1>
+      <p>Explora los sitios web y diseños que he desarrollado recientemente.</p>
+    </div>
     <section class="contenedor-proyectos">
 
       <!-- CARD 1 -->
@@ -171,46 +84,95 @@
 
       <!-- CARD 4 -->
       <div class="card bounce-in" data-aos="fade-up">
-        <img src="media/paginas/ejemplo1.png" alt="Ejemplo 1">
-        <h3>Proyecto 4</h3>
-        <p>Descripción breve del proyecto desarrollado.</p>
-        <a href="#"><button>Visitar</button></a>
+        <img src="media/paginas/aprende.png" alt="Ejemplo 1">
+        <h3>Aprende</h3>
+        <p>Sitio de cursos </p>
+        <a href="https://tranquil-kangaroo-ccf423.netlify.app/"><button>Visitar</button></a>
       </div>
 
       <!-- CARD 5 -->
       <div class="card bounce-in" data-aos="fade-up">
-        <img src="media/paginas/ejemplo2.png" alt="Ejemplo 2">
+        <img src="media/paginas/halo.png" alt="Ejemplo 2">
         <h3>Proyecto 5</h3>
-        <p>Otro sitio profesional con un enfoque innovador.</p>
-        <a href="#"><button>Visitar</button></a>
+        <p>Sitio de torneo de videojuegos</p>
+        <a href="https://frolicking-kashata-bcffba.netlify.app/"><button>Visitar</button></a>
       </div>
-
-      <!-- CARD 6 -->
-      <div class="card bounce-in" data-aos="fade-up">
-        <img src="media/paginas/ejemplo3.png" alt="Ejemplo 3">
-        <h3>Proyecto 6</h3>
-        <p>Página institucional con animaciones suaves y UI limpia.</p>
-        <a href="#"><button>Visitar</button></a>
-      </div>
-
-      <!-- Agrega más de la misma forma -->
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Enderjos | Todos los derechos reservados.</p>
-    <a href="index.html" style="color:#32FA02;">Volver al inicio</a>
-  </footer>
+        <div class="footer-wrapper"data-aos="fade-up">
+            <canvas id="footerAnimation"></canvas>
+            <div class="contenedor_footer">
+                <div class="footer_superior">
+                    <!-- Izquierda -->
+                    <img src="media/logo/logo.png" alt="Logo del sitio">
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-out',
-      mirror: true,
-      once: false
-    });
-  </script>
+                    <!-- Centro -->
+                    <div class="subir">
+                        <button>
+                            <a href="#nav_inicio"><img src="media/iconos/flecha_arriba.png" alt="icono de flecha para arriba"></a>
+                        </button>
+                    </div>
+                    <!-- Derecha -->
+                  <a href="index.html#nav_contacto" class="btn_contactar">Contactar</a>
+                </div>
+
+                <p class="lema">Tu Historia, Mi Codigo: <span style="color: #32FA02;">Juntos Creamos Presencia.</span></p>
+                <div class="raya raya_horizontal_5"></div>
+                <p class="nombre_pagina">!Ender<span style="color: #32FA02;">jos</span></p>
+                <div class="footer_medio"><!--contenido del footer del medio-->
+                    <div class="agradecimiento">
+                        <h4>Agradecimiento al <span style="color: #EEFF00;">INA</span></h4><!--Agradecimiento-->
+                        <p>Gracias al Instituto Nacional de Aprendizaje (INA) por brindarme una formación técnica de excelencia, que me permitió desarrollar habilidades profesionales sólidas en diseño web, accesibilidad y desarrollo institucional. Su compromiso con la educación pública ha sido clave en mi crecimiento creativo y ético.</p>
+                        <div class="rede">
+                            <a href="https://facebook.com" target="_blank">
+                                <img src="media/iconos/facebook.png" alt="Facebook" />
+                            </a>
+                            <a href="https://instagram.com" target="_blank">
+                                <img src="media/iconos/instagram.png" alt="Instagram" />
+                            </a>
+                            <a href="https://tiktok.com" target="_blank">
+                                <img src="media/iconos/tiktok.png" alt="TikTok" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="navegacion_footer"><!--navegacion-->
+                        <h4>Nave<span style="color: #32FA02;">gación</span></h4><!--Titulo de navegacion-->
+                        <nav>
+                            <ul>
+                                <li><a href="index.html#nav_inicio"><span style="color: #32FA02;">Inicio</span></a></li>
+                                <li><a href="index.html#nav_disenos">Diseños</a></li>
+                                <li><a href="index.html#nav_blog">Blog</a></li>
+                                <li><a href="index.html#nav_testimonios">Testimonios</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="pagina_realizadas">
+                        <h4>Sitios <span style="color: #32FA02;">Resientes</span></h4><!--titulo sitios recientes-->
+                        <p>Kairos</p><!--link de paginas desarolladas-->
+                        <p>Kairos</p>
+                        <p>Kairos</p>
+                        <p>Kairos</p>
+                    </div>
+                </div>
+                <div class="raya raya_horizontal_5"></div><!--derechos de autor-->
+                <div class="copy">
+                    <p>&copy; Enderjos, Todos los derechos reservados</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+  <script src="js/nav_hambu.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,      // duración animación (ms)
+            easing: 'ease-out',  // tipo de movimiento
+            once: false,         // vuelve a animar al subir
+            mirror: true         // al subir, animación inversa
+        });
+    </script>
 </body>
 </html>

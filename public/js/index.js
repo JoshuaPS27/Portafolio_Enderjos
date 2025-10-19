@@ -86,13 +86,6 @@ document.getElementById('btnformulario2').addEventListener('click', function () 
 
 
 
-const toggle = document.getElementById('menuToggle');
-  const nav = document.querySelector('.menu_ham');
-
-  toggle.addEventListener('click', () => {
-    toggle.classList.toggle('open');
-    nav.classList.toggle('active');
-  });
 
 //Formulario
 function redirectAfterSubmit(event) {
@@ -186,7 +179,49 @@ function animate() {
 
 animate();
 
+const carousel = document.getElementById('carousel');
+  const cards = carousel.querySelectorAll('.card');
+  let angle = 0;
+  const step = 360 / cards.length;
+  let autoRotate;
 
+  function positionCards() {
+    cards.forEach((card, i) => {
+      const rotation = i * step;
+      card.style.transform = `rotateY(${rotation}deg) translateZ(400px)`;
+    });
+  }
+
+  function rotateCarousel(direction = 1) {
+    angle += direction * step;
+    carousel.style.transform = `rotateY(${angle}deg)`;
+  }
+
+  function startAutoRotate() {
+    autoRotate = setInterval(() => rotateCarousel(1), 3000); // cada 3 segundos
+  }
+
+  function stopAutoRotate() {
+    clearInterval(autoRotate);
+  }
+
+  // Eventos para flechas
+  document.querySelector('.arrow.left').addEventListener('click', () => {
+    stopAutoRotate();
+    rotateCarousel(-1);
+  });
+
+  document.querySelector('.arrow.right').addEventListener('click', () => {
+    stopAutoRotate();
+    rotateCarousel(1);
+  });
+
+  // Eventos para detener al pasar el cursor
+  document.querySelector('.carousel-wrapper').addEventListener('mouseenter', stopAutoRotate);
+  document.querySelector('.carousel-wrapper').addEventListener('mouseleave', startAutoRotate);
+
+  positionCards();
+  startAutoRotate();
 
 
 
