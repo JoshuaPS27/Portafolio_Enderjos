@@ -5,14 +5,7 @@
   box-sizing: border-box;
   color: #fff;
 }
-/* en proceso
-#backgraund-mask{
-  mask-image: url(media/logo/logo.png);
-  mask-position: center;
-  mask-repeat: no-repeat;
-  mask-size: 50px;
-  animation: lok;
-}*/
+
 html, body {
   overflow-x: hidden; /* evita scroll horizontal */
 }
