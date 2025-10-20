@@ -500,6 +500,12 @@ textarea{
 .formulario_contacto textarea:focus::placeholder {
   opacity: 0;
 }
+.formulario_contacto h3{
+  margin-bottom: 1rem;
+}
+.formulario_contacto label{
+  color: #32FA02;
+}
 /*-------------------------------Fin contacto---------------------------------*/
 
 /*--------------Responsi-------------*/
@@ -510,7 +516,7 @@ textarea{
     width: 100%;
   }
 }
-/* A partir de 769px: ocultar imagen */
+
 @media screen and (min-width: 769px) {
   .img_contacto {
     display: none;

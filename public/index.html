@@ -133,7 +133,7 @@
                     <div class="habilidad" data-aos="fade-up"><!--Abilidad 2-->
                         <div class="raya_habilidades"></div><!--Decoracion-->
                         <div class="habilidades_circulo"><!--Circulo-->
-                            <img src="media/iconos/desarrollo_front-end.png" alt="icono de la habilidad "><!--icono de la abilidad-->
+                            <img src="media/iconos/desarrollo_front-end.png" alt="icono de la habilidad Desarrollo web front-end"><!--icono de la abilidad-->
                         </div>
                         <div>
                             <h4>Desarrollo web front-end</h4><!--Titulo-->
@@ -269,11 +269,15 @@
                             <div class="flip-card-back">
                                 <form class="formulario_contacto" action="https://formspree.io/f/xovkppwd" method="POST" onsubmit="return redirectAfterSubmit(event)">
                                     <h3>Formulario de <span style="color: #32FA02;">Contacto</span></h3>
-                                    <input type="text" name="nombre" placeholder="Tu nombre" required>
-                                    <input type="email" name="correo" placeholder="Tu correo" required>
-                                    <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                                    <label for="correo">Correo electrónico</label>
+                                    <input type="email" id="correo" name="correo" placeholder="Tu correo" required>
+                                    <label for="mensaje">Mensaje</label>
+                                    <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje" required></textarea>
                                     <button type="submit">Enviar</button>
                                 </form>
+
                             </div>
                             <div class="Otros">
                                 <p class="email">Numero: <span style="color: #32FA02;">+506 6371 4734</span></p>
@@ -367,10 +371,10 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000,      // duración animación (ms)
-            easing: 'ease-out',  // tipo de movimiento
-            once: false,         // vuelve a animar al subir
-            mirror: true         // al subir, animación inversa
+            duration: 1000,     
+            easing: 'ease-out', 
+            once: false,        
+            mirror: true         
         });
     </script>
 </body>
