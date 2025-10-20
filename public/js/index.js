@@ -223,6 +223,11 @@ const carousel = document.getElementById('carousel');
   positionCards();
   startAutoRotate();
 
-
+//habilidades
+document.querySelectorAll('.habilidad').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('active');
+    });
+  });
 
 

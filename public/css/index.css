@@ -233,7 +233,7 @@ h2 {
   gap: 125px;
   padding: 0 20px;
   margin-top: 6rem;
-  width: 75rem;
+  width: 100%;
 }
 /* Cada habilidad */
 .habilidad {
@@ -516,6 +516,29 @@ textarea{
     width: 100%;
   }
 }
+/* Estilos para tablets */
+@media screen and (max-width: 1024px) {
+  .grid-habilidades {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    width: 100%;
+    padding: 0 10px;
+  }
+  .habilidades {
+    width: 100%;
+    padding: 3rem 1.5rem;
+  }
+  .habilidades h3 {
+    font-size: 1.6rem;
+  }
+  .habilidad h4 {
+    font-size: 1.4rem;
+    margin: -3rem 0 1.5rem 0;
+  }
+  .habilidad p {
+    font-size: 0.9rem;
+  }
+}
 
 @media screen and (min-width: 769px) {
   .img_contacto {
@@ -660,35 +683,39 @@ textarea{
     height: 35rem; 
   }
   /*Habilidades*/
-  .abilidades h3 {
-    font-size: 1.4rem;
-    margin-top: -3rem;
+  .grid-habilidades {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 10px;
+    margin-top: 3rem;
   }
-  .abilidad {
+  .habilidad {
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: auto;
     width: 100%;
-    height: 8rem;
-    margin-bottom: 2rem;
-    max-width: 85%;
-    margin-left: -10%;
+    margin-top: 3rem;
   }
-  .abilidad h4{
+  
+  .habilidad h4{
     font-size: 1rem;
   }
-  .abilidad p{
-    display: none;
+  .habilidad p {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
   }
-  .raya_abilidades{
-    margin: -0.5rem 0 0 -1.7rem;
+  .habilidad.active {
+    transform: scale(1.05);
+    z-index: 1;
   }
-  .grid-abilidades {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);  
-    gap: 5%;
-    margin-top: 6rem;
-    width: 100%;
-  }
-  .abilidades_circulo{
-    margin-top: -9rem;
+  .habilidad.active p {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 1rem;
   }
   /*Testimonios*/
   #nav_testimonios h2{
