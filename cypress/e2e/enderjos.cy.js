@@ -5,10 +5,10 @@ describe('Pruebas del Portafolio de Enderjos', () => {
   });
 
   // ================== SCREENSHOT DESPUÉS DE CADA TEST ==================
-  afterEach(() => {
+  /*afterEach(() => {
     cy.wait(1000); 
     cy.screenshot(); 
-  });
+  });*/
 
   // ================== HEADER ==================
   it('REQ001 - Verificar título', () => {
